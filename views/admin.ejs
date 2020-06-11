@@ -27,6 +27,15 @@
     </button>
   </div>
   <% } %>
+
+  <% if (warning.length > 0){ %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" role="alert">
+    <strong><%=warning%></strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% } %>
   <nav class="">
 
     <marquee style="color: #fd4950; letter-spacing: 0.9em;">Welcome to King Stiches, here we offer the best service to our client and give the best rates</marquee>
@@ -67,7 +76,7 @@
     <h1>Welcome King Stiches! <strong>(Admin:)</strong></h1>
 
     <div class="row">
-      <% typeof msg != "undefined" ? msg : "" %>
+      
       <div class="col-lg-6 col-sm-12">
         <h3>(Add New Product)</h3>
         <form class="form-group" action="/upload" method="POST" enctype="multipart/form-data">

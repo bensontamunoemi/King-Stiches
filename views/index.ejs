@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="/css/styles.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Testimonial style -->
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"> -->
+
 </head>
 
 <body>
@@ -28,11 +34,9 @@
   </div>
   <% } %>
   <nav class="">
-
-    <marquee style="color: #009245; letter-spacing: 0.9em;">Welcome to King Stiches, here we offer the best service to our client and give the best rates</marquee>
-
+    <div>
+      <marquee style="color: #009245; letter-spacing: 0.7em; "><h5><strong>Welcome to King Stiches, here we offer the best service to our client and give the best rates</strong></h5></marquee>
     </div>
-
   </nav>
 
 
@@ -45,6 +49,9 @@
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
         <li class="nav-item active">
           <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#aboutus">About Us</a>
@@ -82,8 +89,8 @@
   </div>
 
 
-
-  <div class="container service">
+<!-- Our Servive Section -->
+  <div id="services" class="container service">
 
     <strong>
       <h1>Services</h1>
@@ -109,7 +116,7 @@
       <div class="card col-lg-4 col-sm-6" data-aos="fade-up-left">
         <div class="face face1">
           <div class="content">
-            <i class="fas fa-cut sicon"></i>
+            <i class="fas fa-tshirt sicon"></i>
             <h3>Design</h3>
           </div>
         </div>
@@ -124,7 +131,7 @@
       <div class="card col-lg-4 col-sm-6" data-aos="zoom-in-up">
         <div class="face face1">
           <div class="content">
-            <i class="fas fa-cut sicon"></i>
+            <i class="fas fa-ruler-combined sicon"></i>
             <h3>Design</h3>
           </div>
         </div>
@@ -138,6 +145,9 @@
 
     </div>
   </div>
+  <!-- End Our Servive Section -->
+
+  <!--  About Us and Contact us Section -->
 
   <div id="aboutus" class="container-fluid about">
 
@@ -175,12 +185,16 @@
       </div>
     </div>
   </div>
+    <!-- End  About Us and Contact us Section -->
+
+
+    <!--  Our Product Section -->
   <div id="product" class="container product">
     <h1>New Products</h1>
     <div class="row">
 
-      <% if (clothProducts.length > 0){ %>
-      <% clothProducts.forEach(function(cloth){ %>
+      <% if (clothProducts.docs.length > 0){ %>
+      <% clothProducts.docs.forEach(function(cloth){ %>
       <div class="col-lg-3 col-sm-6 sales" data-aos="fade-up-right">
         <div class="card" style="width: 16rem;">
           <img src="./uploads/<%= cloth.imagename %>" class="img-fluid  mx-auto d-block" alt="<%= cloth.imagename %>">
@@ -192,24 +206,89 @@
       </div>
       <%  }); %>
       <% } %>
-
-
-
-
-
     </div>
-
   </div>
+  <!-- End Our Product Section -->
+
+  <!-- Pagination -->
+  <div class="container">
+    <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <% if (clothProducts.hasPrevPage === true){ %>
+          <li class="page-item"><a class="page-link" href="/?page=<%= clothProducts.page - 1 %>">Previous</a></li>
+  <%  }else{ %>
+    <li class="page-item page-link">Previous</li>
+<%  } %>
+
+<% if (clothProducts.hasNextPage === true){ %>
+      <li class="page-item"><a class="page-link" href="/?page=<%= clothProducts.page + 1 %>">Next</a></li>
+<%  }else{ %>
+<li class="page-item page-link">Next</li>
+<%  } %>
+  </ul>
+</nav>
+  </div>
+  <!-- End Pagination -->
 
 
+
+  <!--  Our Testimonial Section -->
+  <!-- <div class="container-fluid">
+    <h1>What out clients are saying</h1>
+<div class="row testiCon">
+    <div class="col-md-12">
+        <div id="testimonial-slider" class="owl-carousel">
+            <div class="testimonial">
+                <div class="pic">
+                    <img src="images/img-1.jpg">
+                </div>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi dolorum earum fugiat, fugit hic id, ipsum laborum minus nostrum numquam perspiciatis saepe velit.
+                </p>
+                <div class="testimonial-profile">
+                    <h3 class="title">williamson-</h3>
+                    <span class="post">Web Developer</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="pic">
+                    <img src="images/img-2.jpg">
+                </div>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi dolorum earum fugiat, fugit hic id, ipsum laborum minus nostrum numquam perspiciatis saepe velit.
+                </p>
+                <div class="testimonial-profile">
+                    <h3 class="title">Kristina-</h3>
+                    <span class="post">Web Designer</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="pic">
+                    <img src="images/img-3.jpg">
+                </div>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi dolorum earum fugiat, fugit hic id, ipsum laborum minus nostrum numquam perspiciatis saepe velit.
+                </p>
+                <div class="testimonial-profile">
+                    <h3 class="title">Steve Thomas-</h3>
+                    <span class="post">Web Developer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> -->
+  <!-- End Our Testimonial Section -->
+
+
+
+  <!--  footer Section -->
   <footer class="container-fluid py-5 foot">
     <div class="row">
       <div class="col-12 col-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false">
-          <title>Product</title>
-          <circle cx="12" cy="12" r="10" />
-          <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
-        </svg>
+        <i class="fas fa-crown"></i>
         <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
       </div>
       <div class="col-6 col-md">
@@ -253,6 +332,10 @@
     </div>
   </footer>
 
+    <!--End Our Product Section -->
+
+
+
 
   <script>
     //Get the button
@@ -277,9 +360,28 @@
       document.documentElement.scrollTop = 0;
     }
   </script>
+  <!-- script for animation -->
   <script>
     AOS.init();
   </script>
+
+  <!-- Script for testimonial -->
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+    $("#testimonial-slider").owlCarousel({
+        items:2,
+        itemsDesktop:[1000,2],
+        itemsDesktopSmall:[979,2],
+        itemsTablet:[768,2],
+        itemsMobile:[650,1],
+        pagination:true,
+        navigation:false,
+        slideSpeed:1000,
+        autoPlay:true
+    });
+});
+</script> -->
+
 
 </body>
 

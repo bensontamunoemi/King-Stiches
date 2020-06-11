@@ -13,6 +13,7 @@ const Contact = require ("./modules/contact");
 const Product = require ("./modules/product");
 const path = require("path");
 
+
 // const gridfsStorage = require("multer-gridfs-storage");
 // const grid = require("gridfs-stream");
 // const methodOverride = require("method-override");
@@ -20,16 +21,6 @@ const path = require("path");
 
 
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/uploads");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now()+path.extname(file.originalname));
-  }
-});
-
-const upload = multer({ storage: storage }).single("productImage");
 
 const app = express();
 
@@ -37,6 +28,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+// app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(session({
@@ -69,17 +61,46 @@ passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
 
 app.get("/", function(req,res){
+  // Product.find({}).sort({_id:-1}).limit( 8 ).exec(function(err, foundProduct){
+  //     if(err){
+  //       console.log(err);
+  //     }else{
+  //       if(foundProduct){
+  //         res.render("index", {clothProducts: foundProduct, success: req.flash("info")});
+  //       }
+  //     }
+  //   });
 
+  const options = {
+  page: parseInt(req.query.page) || 1,
+  limit: 12,
+  collation: {
+    locale: 'en'
+  }
+};
 
-  Product.find({}).sort({_id:-1}).exec(function(err, foundProduct){
-      if(err){
-        console.log(err);
-      }else{
-        if(foundProduct){
-          res.render("index", {clothProducts: foundProduct, success: req.flash("info")});
-        }
-      }
-    });
+Product.paginate({}, options, function(err, result) {
+
+  if(err){
+    console.log(err);
+  }else{
+    if(result){
+      res.render("index", {clothProducts: result,  success: req.flash("info")});
+    }
+  }
+  // result.docs
+  // result.totalDocs = 100
+  // result.limit = 10
+  // result.page = 1
+  // result.totalPages = 10
+  // result.hasNextPage = true
+  // result.nextPage = 2
+  // result.hasPrevPage = false
+  // result.prevPage = null
+  // result.pagingCounter = 1
+
+});
+
 });
 
 app.post("/", function(req,res){
@@ -122,7 +143,7 @@ app.get("/admin", function(req,res){
       console.log(err);
     } else {
       if (foundMessage) {
-        res.render("admin", {sentMessage: foundMessage, success: req.flash("info")});
+        res.render("admin", {sentMessage: foundMessage, success: req.flash("info"), warning: req.flash("bad")});
       }
     }
   });
@@ -132,10 +153,35 @@ app.get("/admin", function(req,res){
 
 app.post("/upload", function (req, res, next) {
 
+  const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "./public/uploads");
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now()+path.extname(file.originalname));
+    }
+  });
+
+  const upload = multer({ storage: storage,
+    fileFilter: function (req, file, callback) {
+            var ext = path.extname(file.originalname);
+            if(ext !== ".png" && ext !== ".jpg" && ext !== ".gif" && ext !== ".jpeg") {
+                req.fileValidationError = "Only Images are allowed to be uploaded";
+                  // res.send("Only Images are allowed to be uploaded");
+                  return callback(new Error('Only images are allowed'));
+            }
+            callback(null, true)
+        },
+        limits:{
+            fileSize: 5000 * 5000
+        }
+   }).single("productImage");
+
+
     upload(req, res, (err) => {
-      if(err){
-        res.render("/admin", {msg: err})
-      }else{
+      if(req.fileValidationError) {
+              return res.end(req.fileValidationError);
+        }else{
         const newProduct = new Product({
           title: req.body.productName,
           description: req.body.productDes,
@@ -152,11 +198,11 @@ app.post("/upload", function (req, res, next) {
        });
       }
     });
-
-
 });
 
-
+app.get("/products", function(req,res){
+  res.render("product");
+});
 app.get("/login", function(req,res){
   res.render("login");
 });
