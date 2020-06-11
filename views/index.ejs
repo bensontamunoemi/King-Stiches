@@ -33,6 +33,13 @@
     </button>
   </div>
   <% } %>
+  <div style="width: 100%;background-color: #fff;color: #009245;height: 50px;font-weight: 800;font-size: 1.85rem;position:fixed;z-index: 10000 !important;">
+  <div style="padding-left: 8px;padding-right: 8px;margin-right: auto;margin-left: auto;max-width: 1184px;width: 100%;display: flex;flex: 0 1 auto;">
+    <marquee> Welcome to King Stiches, here we offer the best service to our client and give the best rates</marquee>
+  </div>
+
+</div>
+
   <nav class="">
     <div>
       <marquee style="color: #009245; letter-spacing: 0.7em; "><h5><strong>Welcome to King Stiches, here we offer the best service to our client and give the best rates</strong></h5></marquee>
@@ -197,7 +204,7 @@
       <% clothProducts.docs.forEach(function(cloth){ %>
       <div class="col-lg-3 col-sm-6 sales" data-aos="fade-up-right">
         <div class="card" style="width: 16rem;">
-          <img src="./uploads/<%= cloth.imagename %>" class="img-fluid  mx-auto d-block" alt="<%= cloth.imagename %>">
+          <img src="./uploads/<%= cloth.imagename %>" class="  " alt="<%= cloth.imagename %>">
           <div class="card-body">
             <h5 class="card-title"><%=cloth.title%></h5>
             <a href="#" class="btn btn-block">Go somewhere</a>
@@ -211,7 +218,7 @@
   <!-- End Our Product Section -->
 
   <!-- Pagination -->
-  <div class="container">
+  <div class="container ">
     <nav aria-label="Page navigation example">
   <ul class="pagination">
     <% if (clothProducts.hasPrevPage === true){ %>

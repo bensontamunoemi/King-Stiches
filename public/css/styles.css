@@ -33,6 +33,7 @@ h1{
 .menu{
   background-color: #2bb673;
   font-size: 1.2rem;
+  padding-top: 1.2rem;
 }
 
 .header{
@@ -82,16 +83,33 @@ h1{
 }
 .sales{
   padding-top: 3rem;
+}
+.sales h5{
+  padding-top: 24rem;
+
+}
+.sales img{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
 }
 #product{
   padding: 5rem 0;
 }
 
-.sales:hover{
+.sales img:hover{
   transform: scale(1.1);
   transition: all ease 500ms;
 }
+
+
+
 .about h1{
   font-weight: bold;
   font-size: 3rem;
