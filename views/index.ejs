@@ -206,7 +206,7 @@
         <div class="card" style="width: 16rem;">
           <img src="./uploads/<%= cloth.imagename %>" class="  " alt="<%= cloth.imagename %>">
           <div class="card-body">
-            <h5 class="card-title"><%=cloth.title%></h5>
+            <h5 class="card-title"><%=cloth.title.substring(0, 55)%>.....</h5>
             <a href="#" class="btn btn-block">Go somewhere</a>
           </div>
         </div>
