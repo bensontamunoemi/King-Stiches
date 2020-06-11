@@ -74,6 +74,7 @@ app.get("/", function(req,res){
   const options = {
   page: parseInt(req.query.page) || 1,
   limit: 12,
+  sort: { _id: -1 },
   collation: {
     locale: 'en'
   }
