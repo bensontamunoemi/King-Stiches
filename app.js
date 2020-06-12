@@ -12,6 +12,8 @@ const multer  = require("multer");
 const Contact = require ("./modules/contact");
 const Product = require ("./modules/product");
 const path = require("path");
+const fs = require("fs")
+const { promisify } = require("util")
 
 
 // const gridfsStorage = require("multer-gridfs-storage");
@@ -59,6 +61,31 @@ passport.use(Admin.createStrategy());
 
 passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
+
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./public/uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now()+path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage: storage,
+  fileFilter: function (req, file, callback) {
+          var ext = path.extname(file.originalname);
+          if(ext !== ".png" && ext !== ".jpg" && ext !== ".gif" && ext !== ".jpeg") {
+              req.fileValidationError = "Only Images are allowed to be uploaded";
+                // res.send("Only Images are allowed to be uploaded");
+                return callback(new Error('Only images are allowed'));
+          }
+          callback(null, true)
+      },
+      limits:{
+          fileSize: 5000 * 5000
+      }
+ }).single("productImage");
 
 app.get("/", function(req,res){
   // Product.find({}).sort({_id:-1}).limit( 8 ).exec(function(err, foundProduct){
@@ -139,45 +166,29 @@ app.get("/admin", function(req,res){
   //   res.redirect("/login");
   // }
 
-  Contact.find().sort({_id: -1}).exec(function(err, foundMessage){
-    if (err){
-      console.log(err);
-    } else {
-      if (foundMessage) {
-        res.render("admin", {sentMessage: foundMessage, success: req.flash("info"), warning: req.flash("bad")});
+      const options = {
+      page: parseInt(req.query.page) || 1,
+      limit: 8,
+      sort: { _id: -1 },
+      collation: {
+        locale: 'en'
       }
-    }
-  });
+    };
 
+    Product.paginate({}, options, function(err, result) {
+
+      if(err){
+        console.log(err);
+      }else{
+        if(result){
+          res.render("admin", {clothProducts: result,  success: req.flash("info"), deleteAlert: req.flash("deleted")});
+        }
+      }
+    });
 
 });
 
-app.post("/upload", function (req, res, next) {
-
-  const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "./public/uploads");
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now()+path.extname(file.originalname));
-    }
-  });
-
-  const upload = multer({ storage: storage,
-    fileFilter: function (req, file, callback) {
-            var ext = path.extname(file.originalname);
-            if(ext !== ".png" && ext !== ".jpg" && ext !== ".gif" && ext !== ".jpeg") {
-                req.fileValidationError = "Only Images are allowed to be uploaded";
-                  // res.send("Only Images are allowed to be uploaded");
-                  return callback(new Error('Only images are allowed'));
-            }
-            callback(null, true)
-        },
-        limits:{
-            fileSize: 5000 * 5000
-        }
-   }).single("productImage");
-
+app.post("/admin", function (req, res, next) {
 
     upload(req, res, (err) => {
       if(req.fileValidationError) {
@@ -201,9 +212,20 @@ app.post("/upload", function (req, res, next) {
     });
 });
 
-app.get("/products", function(req,res){
-  res.render("product");
+app.post("/delete",upload, function(req, res){
+
+  Product.deleteMany({}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successfully deleted data");
+      req.flash("deleted", "All Product has been deleted from the database");
+      res.redirect("/admin");
+    }
+  });
 });
+
+
 app.get("/login", function(req,res){
   res.render("login");
 });
