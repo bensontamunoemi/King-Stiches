@@ -225,6 +225,31 @@ app.post("/delete",upload, function(req, res){
   });
 });
 
+app.post("/deleteID", function(req, res){
+
+});
+
+app.get("/product/:post", function(req,res){
+
+    let dynamicUrl = _.lowerCase(req.params.post);
+    Product.find(function(err, result){
+      if(err){
+        console.log(err);
+      }else{
+        result.forEach(function(product){
+          let productTitle = _.lowerCase(product.title);
+          if (dynamicUrl === productTitle){
+            res.render("product", {
+              productName: product.title,
+              productDetails: product.description,
+              productImage: product.imagename 
+            });
+          }
+        })
+      }
+    })
+});
+
 
 app.get("/login", function(req,res){
   res.render("login");
