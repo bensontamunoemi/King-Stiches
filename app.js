@@ -242,10 +242,10 @@ app.get("/product/:post", function(req,res){
             res.render("product", {
               productName: product.title,
               productDetails: product.description,
-              productImage: product.imagename 
+              productImage: product.imagename
             });
           }
-        })
+        });
       }
     })
 });

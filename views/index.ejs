@@ -1,246 +1,341 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>King Stiches</title>
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/b78e75d1af.js" crossorigin="anonymous"></script>
-  <!-- End font awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&family=Shrikhand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Testimonial style -->
-  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <title>King Stiches</title>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/b78e75d1af.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- End font awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Testimonial style -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"> -->
+  </head>
 
-</head>
-
-<body>
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-  <% if (success.length > 0){ %>
-  <div class="alert alert-success alert-dismissible fade show" role="alert" role="alert">
-    <strong><%=success%></strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <% } %>
-  <div style="width: 100%;background-color: #fff;color: #009245;height: 50px;font-weight: 800;font-size: 1.85rem;position:fixed;z-index: 10000 !important;">
-  <div style="padding-left: 8px;padding-right: 8px;margin-right: auto;margin-left: auto;max-width: 1184px;width: 100%;display: flex;flex: 0 1 auto;">
-    <marquee> Welcome to King Stiches, here we offer the best service to our client and give the best rates</marquee>
-  </div>
-
-</div>
-
-  <nav class="">
-    <div>
-      <marquee style="color: #009245; letter-spacing: 0.7em; "><h5><strong>Welcome to King Stiches, here we offer the best service to our client and give the best rates</strong></h5></marquee>
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <% if (success.length > 0){ %>
+    <div
+      class="alert alert-success alert-dismissible fade show"
+      role="alert"
+      role="alert"
+    >
+      <strong><%=success%></strong>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </nav>
-
-
-  <nav class="navbar navbar-expand-lg navbar-light menu ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#"><i class="fas fa-crown"></i><strong> King Stiches</strong></a>
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
-        <li class="nav-item active">
-          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#services">Services <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#aboutus">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contactsUs">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#product">New Product</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
-
-
-
-  <div id="home" class="container-fluid mainHead">
-
-    <div class="row">
-
-      <div class="col-lg-6 header">
-        <i class="fas fa-crown crown"></i>
-        <h1 class="animate__animated animate__swing">KingStiches</h1>
-        <p>Eco-friendly Fashion. <span>Dress to Impress</span></p>
+    <% } %>
+    <div
+      style="
+        width: 100%;
+        background-color: #fff;
+        color: #009245;
+        height: 50px;
+        font-weight: 800;
+        font-size: 1.85rem;
+        position: fixed;
+        z-index: 10000 !important;
+      "
+    >
+      <div
+        style="
+          padding-left: 8px;
+          padding-right: 8px;
+          margin-right: auto;
+          margin-left: auto;
+          max-width: 1184px;
+          width: 100%;
+          display: flex;
+          flex: 0 1 auto;
+        "
+      >
+        <marquee>
+          Welcome to King Stiches, here we offer the best service to our client
+          and give the best rates</marquee
+        >
       </div>
-
-      <div class="col-lg-6 cloth">
-        <img class="img-fluid" src="/images/king.png" alt="cloth">
-      </div>
-
     </div>
 
+    <nav class="">
+      <div>
+        <marquee style="color: #009245; letter-spacing: 0.7em;"
+          ><h5>
+            <strong
+              >Welcome to King Stiches, here we offer the best service to our
+              client and give the best rates</strong
+            >
+          </h5></marquee
+        >
+      </div>
+    </nav>
 
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-light menu">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#"
+          ><i class="fas fa-crown"></i><strong> King Stiches</strong></a
+        >
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services"
+              >Services <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutus">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactsUs">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#product">New Product</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-
-<!-- Our Servive Section -->
-  <div id="services" class="container service">
-
-    <strong>
-      <h1>Services</h1>
-    </strong>
-
-    <div class="row">
-
-      <div class="card col-lg-4 col-sm-6" data-aos="fade-up-right">
-        <div class="face face1">
-          <div class="content">
-            <i class="fas fa-cut sicon"></i>
-            <h3>Design</h3>
-          </div>
+    <div id="home" class="container-fluid mainHead">
+      <div class="row">
+        <div class="col-lg-6 header">
+          <i class="fas fa-crown crown"></i>
+          <h1 class="animate__animated animate__swing">KingStiches</h1>
+          <p>Eco-friendly Fashion. <span>Dress to Impress</span></p>
         </div>
-        <div class="face face2">
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-            <a href="#">Read More</a>
-          </div>
+
+        <div class="col-lg-6 cloth">
+          <img class="img-fluid" src="/images/king.png" alt="cloth" />
         </div>
       </div>
-
-      <div class="card col-lg-4 col-sm-6" data-aos="fade-up-left">
-        <div class="face face1">
-          <div class="content">
-            <i class="fas fa-tshirt sicon"></i>
-            <h3>Design</h3>
-          </div>
-        </div>
-        <div class="face face2">
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card col-lg-4 col-sm-6" data-aos="zoom-in-up">
-        <div class="face face1">
-          <div class="content">
-            <i class="fas fa-ruler-combined sicon"></i>
-            <h3>Design</h3>
-          </div>
-        </div>
-        <div class="face face2">
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
-  <!-- End Our Servive Section -->
 
-  <!--  About Us and Contact us Section -->
+    <!-- Our Servive Section -->
+    <div id="services" class="container service">
+      <strong>
+        <h1>Services</h1>
+      </strong>
 
-  <div id="aboutus" class="container-fluid about">
-
-    <div class="row">
-      <div class="col-lg-6">
-        <h1>About Us</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ultricies lacus sed turpis tincidunt id. Sit amet consectetur
-          adipiscing elit ut aliquam purus. Nullam ac tortor vitae purus faucibus
-          ornare suspendisse. Consectetur lorem donec massa sapien faucibus et.
-          Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Turpis
-          tincidunt id aliquet risus feugiat in ante metus dictum.
-        </p>
-      </div>
-      <div id="contactsUs" class="col-lg-6">
-        <h1>Contact Us</h1>
-        <div class="container">
-          <form class="" action="/" method="post">
-            <div class="form-group">
-              <label>Your Name:</label>
-              <input name="yourName" type="text" class="form-control myInput" required>
-              <label>Email address:</label>
-              <input name="yourEmail" type="email" class="form-control myInput" required>
-              <label>Phone:</label>
-              <input name="yourPhone" type="phone" class="form-control myInput" required>
-              <label>Your Message:</label>
-              <textarea name="yourMessage" class="form-control myInput" rows="3" required></textarea>
-              <button type="submit" class="btn  btn-lg sendButton">Send Message</button>
+      <div class="row">
+        <div class="card col-lg-4 col-sm-6" data-aos="fade-up-right">
+          <div class="face face1">
+            <div class="content">
+              <i class="fas fa-cut sicon"></i>
+              <h3>Design</h3>
             </div>
-          </form>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>
+                WE DESING ALL KING OF WEARS, RANGING FROM TRADITIONAL,
+                COTEMPORARY AND ENGLISH WEARS. WITH OUR PROFESSIONAL FASHION
+                DESIGNERS WE OFFER THE BEST.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
         </div>
 
+        <div class="card col-lg-4 col-sm-6" data-aos="fade-up-left">
+          <div class="face face1">
+            <div class="content">
+              <i class="fas fa-tshirt sicon"></i>
+              <h3>SALES</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>
+                WE SELL WELL CRAFTED CLOTHS, MADE BY OUR PROFESSIONAL FASHION
+                DESIGNERS, TO SUIT YOUR DESIRED LOOKS.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card col-lg-4 col-sm-6" data-aos="zoom-in-up">
+          <div class="face face1">
+            <div class="content">
+              <i class="fas fa-ruler-combined sicon"></i>
+              <h3>FASION ADVICE</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>
+                WE OFFER ADVICE ON FASHION TO CLIENTS WHO WANT TO BOOK, US FOR
+                OUR SERVICES WHICH WE PROVIDE.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <!-- End Our Servive Section -->
+
+    <!--  About Us and Contact us Section -->
+
+    <div id="aboutus" class="container-fluid about">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>About Us</h1>
+          <p>
+            WITH A RANGE OF MORE THAN 20 INDIVIDUAL FASHION BRANDS, KING STICHES
+            PROVIDES FASHION CLOTHING AND ACCESSORIES FOR WOMEN, MEN, TEENAGERS
+            AND CHILDREN.
+          </p>
+        </div>
+        <div id="contactsUs" class="col-lg-6">
+          <h1>Contact Us</h1>
+          <div class="container">
+            <form class="" action="/" method="post">
+              <div class="form-group">
+                <label>Your Name:</label>
+                <input
+                  name="yourName"
+                  type="text"
+                  class="form-control myInput"
+                  required
+                />
+                <label>Email address:</label>
+                <input
+                  name="yourEmail"
+                  type="email"
+                  class="form-control myInput"
+                  required
+                />
+                <label>Phone:</label>
+                <input
+                  name="yourPhone"
+                  type="phone"
+                  class="form-control myInput"
+                  required
+                />
+                <label>Your Message:</label>
+                <textarea
+                  name="yourMessage"
+                  class="form-control myInput"
+                  rows="3"
+                  required
+                ></textarea>
+                <button type="submit" class="btn btn-lg sendButton">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- End  About Us and Contact us Section -->
 
-
     <!--  Our Product Section -->
-  <div id="product" class="container product">
-    <h1>New Products</h1>
-    <div class="row">
-
-      <% if (clothProducts.docs.length > 0){ %>
-      <% clothProducts.docs.forEach(function(cloth){ %>
-      <div class="col-lg-3 col-sm-6 sales" data-aos="fade-up-right">
-        <div class="card" style="width: 16rem;">
-          <img src="./uploads/<%= cloth.imagename %>" class="  " alt="<%= cloth.imagename %>">
-          <div class="card-body">
-            <h5 class="card-title"><%=cloth.title.substring(0, 55)%>.....</h5>
-            <a href="/product/<%=cloth.title%>" class="btn btn-block">Go somewhere</a>
+    <div id="product" class="container product">
+      <h1>New Products</h1>
+      <div class="row">
+        <% if (clothProducts.docs.length > 0){ %> <%
+        clothProducts.docs.forEach(function(cloth){ %>
+        <div class="col-lg-3 col-sm-6 sales" data-aos="fade-up-right">
+          <div class="card" style="width: 16rem;">
+            <img
+              src="./uploads/<%= cloth.imagename %>"
+              class="  "
+              alt="<%= cloth.imagename %>"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%=cloth.title.substring(0, 55)%>.....</h5>
+              <a href="/product/<%=cloth.title%>" class="btn btn-block"
+                >Go somewhere</a
+              >
+            </div>
           </div>
         </div>
+        <% }); %> <% } %>
       </div>
-      <%  }); %>
-      <% } %>
     </div>
-  </div>
-  <!-- End Our Product Section -->
+    <!-- End Our Product Section -->
 
-  <!-- Pagination -->
-  <div class="container ">
-    <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <% if (clothProducts.hasPrevPage === true){ %>
-          <li class="page-item"><a class="page-link" href="/?page=<%= clothProducts.page - 1 %>">Previous</a></li>
-  <%  }else{ %>
-    <li class="page-item page-link">Previous</li>
-<%  } %>
+    <!-- Pagination -->
+    <div class="container">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <% if (clothProducts.hasPrevPage === true){ %>
+          <li class="page-item">
+            <a class="page-link" href="/?page=<%= clothProducts.page - 1 %>"
+              >Previous</a
+            >
+          </li>
+          <% }else{ %>
+          <li class="page-item page-link">Previous</li>
+          <% } %> <% if (clothProducts.hasNextPage === true){ %>
+          <li class="page-item">
+            <a class="page-link" href="/?page=<%= clothProducts.page + 1 %>"
+              >Next</a
+            >
+          </li>
+          <% }else{ %>
+          <li class="page-item page-link">Next</li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+    <!-- End Pagination -->
 
-<% if (clothProducts.hasNextPage === true){ %>
-      <li class="page-item"><a class="page-link" href="/?page=<%= clothProducts.page + 1 %>">Next</a></li>
-<%  }else{ %>
-<li class="page-item page-link">Next</li>
-<%  } %>
-  </ul>
-</nav>
-  </div>
-  <!-- End Pagination -->
-
-
-
-  <!--  Our Testimonial Section -->
-  <!-- <div class="container-fluid">
+    <!--  Our Testimonial Section -->
+    <!-- <div class="container-fluid">
     <h1>What out clients are saying</h1>
 <div class="row testiCon">
     <div class="col-md-12">
@@ -287,93 +382,91 @@
     </div>
 </div>
 </div> -->
-  <!-- End Our Testimonial Section -->
+    <!-- End Our Testimonial Section -->
 
-
-
-  <!--  footer Section -->
-  <footer class="container-fluid py-5 foot">
-    <div class="row">
-      <div class="col-12 col-md">
-        <i class="fas fa-crown"></i>
-        <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+    <!--  footer Section -->
+    <footer class="container-fluid py-5 foot">
+      <div class="row">
+        <div class="col-12 col-md">
+          <i class="fas fa-crown"></i>
+          <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Cool stuff</a></li>
-          <li><a class="text-muted" href="#">Random feature</a></li>
-          <li><a class="text-muted" href="#">Team feature</a></li>
-          <li><a class="text-muted" href="#">Stuff for developers</a></li>
-          <li><a class="text-muted" href="#">Another one</a></li>
-          <li><a class="text-muted" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Resource</a></li>
-          <li><a class="text-muted" href="#">Resource name</a></li>
-          <li><a class="text-muted" href="#">Another resource</a></li>
-          <li><a class="text-muted" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Business</a></li>
-          <li><a class="text-muted" href="#">Education</a></li>
-          <li><a class="text-muted" href="#">Government</a></li>
-          <li><a class="text-muted" href="#">Gaming</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Team</a></li>
-          <li><a class="text-muted" href="#">Locations</a></li>
-          <li><a class="text-muted" href="#">Privacy</a></li>
-          <li><a class="text-muted" href="#">Terms</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <!--End Our Product Section -->
 
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
 
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
 
-
-  <script>
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {
-      scrollFunction()
-    };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
       }
-    }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
-  <!-- script for animation -->
-  <script>
-    AOS.init();
-  </script>
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!-- script for animation -->
+    <script>
+      AOS.init();
+    </script>
 
-  <!-- Script for testimonial -->
-<!-- <script type="text/javascript">
+    <!-- Script for testimonial -->
+    <!-- <script type="text/javascript">
 $(document).ready(function(){
     $("#testimonial-slider").owlCarousel({
         items:2,
@@ -388,8 +481,5 @@ $(document).ready(function(){
     });
 });
 </script> -->
-
-
-</body>
-
+  </body>
 </html>
