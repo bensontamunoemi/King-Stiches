@@ -1,28 +1,8 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@massive5566 
-github
-/
-gitignore
-3.1k
-104k54.8k
- Code
- Pull requests 147 Actions
- Projects 0
- Security 0
- Insights
-gitignore/Node.gitignore
-@ch4ot1c ch4ot1c Add .yarn/install-state.gz to Node.gitignore (#3407)
-7293c14 on 14 May
-@stuartpb@shiftkey@SimonSiefke@TennyZhuang@venatoria@ro31337@Richienb@melonmanchan@gouthamve@jucrouzet@cheddar@arcresu@xamgore@tkesgar@kesoji@tejashah88@sroberts@segayuu@ChiefORZ@MCSH@rgbkrk@rsolomo@peat@noinkling@ndelvalle@MikeRalphson
-116 lines (86 sloc)  1.77 KB
+/node_modules
+npm-debug.log
 .DS_Store
+/*.env
+
 # Logs
 logs
 *.log
